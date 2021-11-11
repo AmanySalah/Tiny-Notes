@@ -1,15 +1,3 @@
-img {
-  width: 150px;
-  border-radius: 75px;
-  float: left;
-  margin-right: 15px;
-}
-
-.username {
-  font-weight: bold;
-  /* margin-top: 50px; */
-}
-
 body {
   background-color: #25282c;
   height: 100%;
@@ -19,7 +7,7 @@ body {
 .notes {
   display: flex;
   height: 100%;
-  /* background-color: honeydew; */
+ 
 }
 
 .notes * {
@@ -33,11 +21,11 @@ body {
   overflow-y: auto;
   padding: 1em;
   width: 300px;
-  /* background-color: honeydew; */
 }
 
-.notes__add-btn {
+.notes__btn-add {
   background: #009578;
+  position: absolute;
   border: none;
   border-radius: 7px;
   color: #ffffff;
@@ -45,28 +33,56 @@ body {
   font-size: 1.25em;
   font-weight: bold;
   margin-bottom: lem;
+  bottom: 10px;
   padding: 0.75em 0;
-  width: 100%;
-  margin: 10px;
+  width: 15%;
 }
 
-.notes__add-btn:hover {
+.notes__btn-edit, .notes__btn-del {
+  /* display:inline-block; */
+  background: #009578;
+  position: relative;
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em 0;
+  width: 49%;
+}
+
+.notes__btn-save{
+  background: #009578;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: lem;
+  bottom: 10px;
+  padding: 0.75em 0;
+  width: 10%;
+
+}
+.notes__btn-add:hover, .notes__btn-del:hover, 
+.notes__btn-edit:hover, .notes__btn-save:hover {
   background: #00af8c;
 }
 
 .notes__list-item {
   cursor: pointer;
-  /* border-right: 2px solid #e9e1e1; */
+  padding: 10px 0;
+  margin-top:0.5em;
 }
 
 .notes__list-item--selected {
   background: #6b737c;
   border-radius: 7px;
   font-weight: bold;
-}
-
-.notes__item-updated-date {
-  padding: 10px;
 }
 
 .notes__item-title {
@@ -100,14 +116,15 @@ body {
 }
 
 .notes__page-title {
-  /* color: #00af8c; */
   font-size: 3em;
   font-weight: bold;
   background-color: #25282c;
+  resize: none;
+
 }
 
 .notes__page-body {
-  flex-grow: 1;
+  flex-grow: 10;
   font-size: 1.2em;
   line-height: 1.5;
   margin-top: 2em;

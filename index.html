@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="./js/main.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,33 +10,47 @@
       name="description"
       content="A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team."
     />
-    <title>Tiny Notion</title>
-    <!-- <style>
-     
-    </style> -->
+    <title>Tiny Notes</title>
   </head>
 
   <body>
-    <div class="notes" id="id">
+    <div class="notes">
       <div class="notes__sidebar">
         <div class="notes_list">
-          <div class="notes__list-item notes__list-item--selected">
-            <div class="notes__item-title">Conway's Game of life</div>
-            <div class="notes__item-body">epic conway's game of life:</div>
-            <div class="notes__item-updated-date">26/10/2021</div>
+          <script>
+            let all_notes = getAllNotes();
+            displayList(all_notes);
+          </script>
 
-            <!-- <div class="notes__item-title">Conway's Game of life</div>
-            <div class="notes__item-body">epic conway's game of life:</div>
-            <div class="notes__item-updated-date">26/10/2021</div> -->
-          </div>
-          <button class="notes__add-btn" type="button">Add Note</button>
+          <button class="notes__btn-add" type="button" onClick="newPage()">
+            New Note
+          </button>
         </div>
       </div>
       <div class="notes__page">
-        <input class="notes__page-title" type="text" placeholder="Untitled Note" />
-        <textarea class="notes__page-body" placeholder="Add you note here! :)"></textarea>
+        <textarea
+          id="noteTitle"
+          class="notes__page-title"
+          type="text"
+          placeholder="Untitled Note"
+          rows="2"
+          cols="20"
+        ></textarea>
+        <textarea
+          id="noteBody"
+          class="notes__page-body"
+          placeholder="Add you note here! :)"
+          rows="21"
+          cols="20"
+        ></textarea>
+        <button
+          class="notes__btn-save"
+          type="button"
+          onclick="saveNotes(noteTitle.value, noteBody.value)"
+        >
+          Save
+        </button>
       </div>
     </div>
-    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
